@@ -18,7 +18,7 @@
           :key="group.id"
           link
           @click.native="$emit('selectGroup', { groupId: group.id })"
-          v-close-overlay
+          v-close-menu
         >
           <QItemMain>
             {{ group.name }}

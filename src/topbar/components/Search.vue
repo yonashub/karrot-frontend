@@ -12,7 +12,7 @@
       @clear="clear"
       @keyup.esc="clear"
     >
-      <QAutocomplete
+      <QSelect
         @search="search"
         @selected="selected"
       />
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import { QSearch, QAutocomplete } from 'quasar'
+import { QSearch, QSelect } from 'quasar'
 import { mapMutations, mapGetters } from 'vuex'
 
 export default {
-  components: { QSearch, QAutocomplete },
+  components: { QSearch, QSelect },
   data () {
     return {
       terms: null,

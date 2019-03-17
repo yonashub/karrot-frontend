@@ -13,7 +13,7 @@
       :class="{'expanded': expanded}"
       class="sidebar"
     >
-      <QAlert
+      <QBanner
         v-if="!isLoggedIn"
         color="warning"
         icon="star"
@@ -28,7 +28,7 @@
             {{ $t('JOINGROUP.LOGOUT_MESSAGE.LOG_IN') }}
           </RouterLink>
         </i18n>
-      </QAlert>
+      </QBanner>
       <p
         class="text-primary header"
         v-if="!hasJoinedGroups"
@@ -129,7 +129,7 @@ import KSpinner from '@/utils/components/KSpinner'
 import {
   QBtn,
   QTooltip,
-  QAlert,
+  QBanner,
   QSearch,
   QCard,
   QCheckbox,
@@ -143,7 +143,7 @@ export default {
     KSpinner,
     QBtn,
     QTooltip,
-    QAlert,
+    QBanner,
     QSearch,
     QCard,
     QCheckbox,

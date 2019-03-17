@@ -19,7 +19,7 @@
       <QTooltip v-if="hasMyApplication">
         {{ $t('APPLICATION.GALLERY_TOOLTIP') }}
       </QTooltip>
-      <QCardMedia
+      <QCardSection
         class="photo"
       >
         <img
@@ -31,7 +31,7 @@
           type="circles"
           class="full-height"
         />
-        <QCardTitle
+        <QCardSection
           slot="overlay"
           class="ellipsis"
         >
@@ -45,9 +45,9 @@
           <span slot="subtitle">
             {{ group.members.length }} {{ $tc('JOINGROUP.NUM_MEMBERS', group.members.length) }}
           </span>
-        </QCardTitle>
-      </QCardMedia>
-      <QCardMain class="fixed-height smaller-text">
+        </QCardSection>
+      </QCardSection>
+      <QCardSection class="fixed-height smaller-text">
         <div
           v-if="group.publicDescription"
         >
@@ -59,8 +59,8 @@
         >
           {{ $t('JOINGROUP.NO_PUBLIC_DESCRIPTION') }}
         </span>
-      </QCardMain>
-      <QCardSeparator />
+      </QCardSection>
+      <QSeparator />
       <QCardActions v-if="group.isMember">
         <QBtn
           @click.stop="$emit('visit')"
@@ -89,11 +89,11 @@
 import { mapGetters } from 'vuex'
 import {
   QCard,
-  QCardTitle,
-  QCardMain,
-  QCardSeparator,
+  QCardSection,
+  QCardSection,
+  QSeparator,
   QCardActions,
-  QCardMedia,
+  QCardSection,
   QBtn,
   QTooltip,
   QIcon,
@@ -107,11 +107,11 @@ export default {
     Markdown,
     RandomArt,
     QCard,
-    QCardTitle,
-    QCardMain,
-    QCardSeparator,
+    QCardSection,
+    QCardSection,
+    QSeparator,
     QCardActions,
-    QCardMedia,
+    QCardSection,
     QBtn,
     QTooltip,
     QIcon,

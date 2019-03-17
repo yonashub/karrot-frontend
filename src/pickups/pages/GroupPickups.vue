@@ -20,14 +20,14 @@
         </template>
       </KNotice>
       <QCard>
-        <QCardTitle v-t="'GROUP.STORES'" />
-        <QCardMain>
+        <QCardSection v-t="'GROUP.STORES'" />
+        <QCardSection>
           <PlaceList
             :group-id="groupId"
             :places="places"
             link-to="placePickupsManage"
           />
-        </QCardMain>
+        </QCardSection>
       </QCard>
     </template>
   </div>
@@ -37,7 +37,7 @@
 import PickupList from '@/pickups/components/PickupList'
 import KNotice from '@/utils/components/KNotice'
 import PlaceList from '@/places/components/PlaceList'
-import { QCard, QCardTitle, QCardMain } from 'quasar'
+import { QCard, QCardSection, QCardSection } from 'quasar'
 
 import {
   mapGetters,
@@ -45,7 +45,7 @@ import {
 } from 'vuex'
 
 export default {
-  components: { QCard, QCardTitle, QCardMain, PickupList, KNotice, PlaceList },
+  components: { QCard, QCardSection, QCardSection, PickupList, KNotice, PlaceList },
   methods: {
     ...mapActions({
       join: 'pickups/join',

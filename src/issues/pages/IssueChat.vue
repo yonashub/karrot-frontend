@@ -3,7 +3,7 @@
     class="relative-position"
     v-if="issue"
   >
-    <QCollapsible
+    <QExpansionItem
       opened
       class="bg-grey-2"
     >
@@ -21,7 +21,7 @@
         />
       </div>
       <div class="q-mx-sm q-mb-sm q-pa-sm bg-white">
-        <span class="text-bold text-secondary uppercase">
+        <span class="text-bold text-secondary text-uppercase">
           <RouterLink
             place="userName"
             @click.native.stop
@@ -50,14 +50,14 @@
             class="q-mr-xs"
           />
         </div>
-        <div class="q-caption q-caption-opacity q-mt-xs">
+        <div class="text-caption text-caption-opacity q-mt-xs">
           {{ $t('ISSUE.PARTICIPANTS', { count: conversation.participants.length }) }}
         </div>
       </div>
-    </QCollapsible>
+    </QExpansionItem>
     <div
       v-if="conversation"
-      class="bg-secondary absolute-top-right round-borders q-pa-xs"
+      class="bg-secondary absolute-top-right rounded-borders q-pa-xs"
     >
       <NotificationToggle
         :muted="conversation.muted"
@@ -93,7 +93,7 @@ import NotificationToggle from '@/messages/components/NotificationToggle'
 import { mapGetters, mapActions } from 'vuex'
 
 import {
-  QCollapsible,
+  QExpansionItem,
 } from 'quasar'
 
 export default {
@@ -103,7 +103,7 @@ export default {
     DateAsWords,
     ProfilePicture,
     NotificationToggle,
-    QCollapsible,
+    QExpansionItem,
   },
   computed: {
     ...mapGetters({

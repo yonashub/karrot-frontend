@@ -11,7 +11,7 @@
         {{ $t('NOTIFICATION_BELLS_LIST.NO_ITEMS') }}
       </QItem>
       <NotificationItem
-        v-close-overlay
+        v-close-menu
         v-for="notification in notifications"
         :key="notification.id"
         :notification="notification"
@@ -22,7 +22,7 @@
         class="row justify-end q-mt-sm q-mr-sm"
       >
         <QBtn
-          v-close-overlay
+          v-close-menu
           size="sm"
           color="secondary"
           :to="{ name: 'notifications' }"

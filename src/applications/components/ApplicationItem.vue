@@ -56,7 +56,7 @@
       touch-position
     >
       <QList
-        v-close-overlay
+        v-close-menu
         link
       >
         <QItem

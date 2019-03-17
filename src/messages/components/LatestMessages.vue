@@ -12,7 +12,7 @@
           {{ $t('CONVERSATION.NO_CONVERSATIONS') }}
         </QItem>
         <LatestMessageItem
-          v-close-overlay
+          v-close-menu
           v-for="conv in conversations"
           :key="'conv' + conv.id"
           :group="conv.type === 'group' ? conv.target : null"
@@ -76,7 +76,7 @@
           class="row justify-end q-mt-sm q-mr-sm"
         >
           <QBtn
-            v-close-overlay
+            v-close-menu
             size="sm"
             color="secondary"
             :to="{ name: 'messages' }"

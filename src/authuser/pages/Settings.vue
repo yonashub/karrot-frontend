@@ -1,8 +1,8 @@
 <template>
   <div v-if="user">
     <QCard class="no-shadow grey-border">
-      <QCardTitle>{{ $t('USERDATA.PROFILE_TITLE') }}</QCardTitle>
-      <QCardMain>
+      <QCardSection>{{ $t('USERDATA.PROFILE_TITLE') }}</QCardSection>
+      <QCardSection>
         <ChangePhoto
           :value="user"
           :status="profileEditStatus"
@@ -11,23 +11,23 @@
           mime-type="image/jpeg"
           @save="saveUser({ photo: arguments[0] })"
         />
-        <QCardSeparator />
+        <QSeparator />
         <ProfileEdit
           :value="user"
           :status="profileEditStatus"
           @save="saveUser"
         />
-      </QCardMain>
+      </QCardSection>
     </QCard>
     <QCard class="no-shadow grey-border">
-      <QCardTitle>{{ $t('USERDATA.ACCOUNT') }}</QCardTitle>
-      <QCardMain>
+      <QCardSection>{{ $t('USERDATA.ACCOUNT') }}</QCardSection>
+      <QCardSection>
         <ChangeEmail
           :user="user"
           :status="changeEmailStatus"
           @save="changeEmail"
         />
-        <QCardSeparator />
+        <QSeparator />
         <ChangePassword
           :status="changePasswordStatus"
           @save="changePassword"
@@ -38,27 +38,27 @@
             @requestDeleteAccount="requestDeleteAccount"
           />
         </QCardActions>
-      </QCardMain>
+      </QCardSection>
     </QCard>
     <QCard
       v-if="!$q.platform.is.cordova"
       class="no-shadow grey-border"
     >
-      <QCardTitle>{{ $t('USERDATA.PUSH') }}</QCardTitle>
-      <QCardMain>
+      <QCardSection>{{ $t('USERDATA.PUSH') }}</QCardSection>
+      <QCardSection>
         <Push
           :value="pushEnabled"
           :pending="pushPending"
           @enable="enablePush"
           @disable="disablePush"
         />
-      </QCardMain>
+      </QCardSection>
     </QCard>
   </div>
 </template>
 
 <script>
-import { QCard, QCardTitle, QCardMain, QCardSeparator, QCardActions } from 'quasar'
+import { QCard, QCardSection, QCardSection, QSeparator, QCardActions } from 'quasar'
 import { mapGetters, mapActions } from 'vuex'
 
 import ProfileEdit from '@/authuser/components/Settings/ProfileEdit'
@@ -72,9 +72,9 @@ export default {
   name: 'Settings',
   components: {
     QCard,
-    QCardTitle,
-    QCardMain,
-    QCardSeparator,
+    QCardSection,
+    QCardSection,
+    QSeparator,
     QCardActions,
     ProfileEdit,
     ChangePassword,

@@ -23,7 +23,7 @@
           :error-label="firstError('date')"
         >
           <div class="row">
-            <QDatetime
+            <QDate
               type="time"
               v-model="date"
               :format24h="is24h"
@@ -33,7 +33,7 @@
               <div
                 class="q-pa-sm"
                 v-t="'TO'"/>
-              <QDatetime
+              <QDate
                 type="time"
                 no-parent-field
                 v-model="dateEnd"
@@ -61,7 +61,7 @@
           :error="hasError('date')"
           :error-label="firstError('date')"
         >
-          <QDatetime
+          <QDate
             type="date"
             v-model="date"
             :min="now"
@@ -171,7 +171,7 @@
 
 <script>
 import {
-  QDatetime,
+  QDate,
   QField,
   QSlider,
   QInput,
@@ -201,7 +201,7 @@ export default {
     },
   },
   components: {
-    QDatetime,
+    QDate,
     QField,
     QSlider,
     QInput,

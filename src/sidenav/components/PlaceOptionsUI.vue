@@ -5,7 +5,7 @@
     <QList
       item-separator
       link
-      v-close-overlay
+      v-close-menu
     >
       <QItem :to="{name: 'placeEdit', params: { placeId }}">
         <QIcon

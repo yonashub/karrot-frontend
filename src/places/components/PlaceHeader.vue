@@ -22,7 +22,7 @@
           <QPopover>
             <QList
               link
-              v-close-overlay
+              v-close-menu
             >
               <QListHeader
                 v-t="'PLACEWALL.SUBSCRIPTION.HEADER'"
@@ -98,7 +98,7 @@
           {{ $t("STOREDETAIL.NO_DESCRIPTION") }}
         </i>
         <template v-if="$q.platform.is.mobile">
-          <QCardSeparator class="q-mb-sm" />
+          <QSeparator class="q-mb-sm" />
           <StandardMap
             :markers="markers"
             class="map"
@@ -124,7 +124,7 @@ import {
 } from 'vuex'
 
 import {
-  QCardSeparator,
+  QSeparator,
   QBtn,
   QTooltip,
   QPopover,
@@ -141,7 +141,7 @@ export default {
     StandardMap,
     RandomArt,
     KSpinner,
-    QCardSeparator,
+    QSeparator,
     QBtn,
     QTooltip,
     QPopover,

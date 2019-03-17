@@ -1,7 +1,7 @@
 <template>
   <div v-if="group">
     <QCard class="shadow-6">
-      <QCardMedia
+      <QCardSection
         class="photo"
         :class="{ hasPhoto: group.hasPhoto }"
       >
@@ -15,7 +15,7 @@
           type="circles"
           class="full-height"
         />
-        <QCardTitle
+        <QCardSection
           slot="overlay"
         >
           <span class="row group items-start">
@@ -28,9 +28,9 @@
           <span slot="subtitle">
             {{ group.members.length }} {{ $tc('JOINGROUP.NUM_MEMBERS', group.members.length) }}
           </span>
-        </QCardTitle>
-      </QCardMedia>
-      <QCardMain>
+        </QCardSection>
+      </QCardSection>
+      <QCardSection>
         <div
           v-if="group.publicDescription"
         >
@@ -42,20 +42,20 @@
         >
           {{ $t('JOINGROUP.NO_PUBLIC_DESCRIPTION') }}
         </span>
-      </QCardMain>
-      <QCardSeparator />
+      </QCardSection>
+      <QSeparator />
       <QCardActions>
         <div style="width: 100%">
           <template v-if="isLoggedIn">
             <template v-if="!group.isMember">
-              <QAlert
+              <QBanner
                 v-if="!application"
                 color="info"
                 icon="info"
               >
                 {{ $t('JOINGROUP.PROFILE_NOTE' ) }}
-              </QAlert>
-              <QAlert
+              </QBanner>
+              <QBanner
                 v-if="application"
                 color="blue"
                 icon="info"
@@ -65,7 +65,7 @@
                 ]"
               >
                 {{ $t('JOINGROUP.APPLICATION_PENDING' ) }}
-              </QAlert>
+              </QBanner>
               <QBtn
                 v-if="group.isOpen"
                 @click="$emit('join', group.id)"
@@ -128,14 +128,14 @@ import {
   Dialog,
   QTooltip,
   QCard,
-  QCardTitle,
-  QCardMain,
-  QCardSeparator,
+  QCardSection,
+  QCardSection,
+  QSeparator,
   QCardActions,
-  QCardMedia,
+  QCardSection,
   QBtn,
   QIcon,
-  QAlert,
+  QBanner,
 } from 'quasar'
 import Markdown from '@/utils/components/Markdown'
 import statusMixin from '@/utils/mixins/statusMixin'
@@ -162,15 +162,15 @@ export default {
   },
   components: {
     QCard,
-    QCardTitle,
-    QCardMain,
-    QCardSeparator,
+    QCardSection,
+    QCardSection,
+    QSeparator,
     QCardActions,
-    QCardMedia,
+    QCardSection,
     QBtn,
     QIcon,
     QTooltip,
-    QAlert,
+    QBanner,
     Markdown,
     RandomArt,
   },

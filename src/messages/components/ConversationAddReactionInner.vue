@@ -10,7 +10,7 @@
       @click.native="$emit('toggle', name)"
       class="big"
       :title="':' + name + ':'"
-      v-close-overlay
+      v-close-menu
     />
   </div>
 </template>

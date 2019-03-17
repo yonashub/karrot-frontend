@@ -27,7 +27,7 @@
           :error-label="firstError('startDate')"
         >
           <div class="row">
-            <QDatetime
+            <QDate
               type="time"
               v-model="edit.startDate"
               :format24h="is24h"
@@ -37,7 +37,7 @@
               <div
                 class="q-pa-sm"
                 v-t="'TO'"/>
-              <QDatetime
+              <QDate
                 type="time"
                 no-parent-field
                 v-model="endDate"
@@ -81,7 +81,7 @@
           :error="hasError('startDate')"
           :error-label="firstError('startDate')"
         >
-          <QDatetime
+          <QDate
             type="datetime"
             v-model="edit.startDate"
             :format24h="is24h"
@@ -212,7 +212,7 @@
 
 <script>
 import {
-  QDatetime,
+  QDate,
   QField,
   QSlider,
   QInput,
@@ -236,7 +236,7 @@ import differenceInSeconds from 'date-fns/difference_in_seconds'
 export default {
   mixins: [editMixin, statusMixin],
   components: {
-    QDatetime,
+    QDate,
     QField,
     QSlider,
     QInput,

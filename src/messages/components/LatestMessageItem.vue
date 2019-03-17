@@ -263,6 +263,8 @@ export default {
   padding 0 7px
   margin-left 2px
 
+/*
 .selected
   background $item-highlight-color
+*/
 </style>

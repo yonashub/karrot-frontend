@@ -101,7 +101,7 @@
           <QList
             item-separator
             link
-            v-close-overlay
+            v-close-menu
           >
             <QItem
               :to="{name: 'groupsGallery'}"

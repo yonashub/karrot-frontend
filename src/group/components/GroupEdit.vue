@@ -104,7 +104,7 @@
               v-model="edit.timezone"
               @blur="$v.edit.timezone.$touch"
             >
-              <QAutocomplete
+              <QSelect
                 :static-data="timezones"
                 :max-results="10"
                 :debounce="300"
@@ -151,7 +151,7 @@ import {
   QField,
   QInput,
   QBtn,
-  QAutocomplete,
+  QSelect,
 } from 'quasar'
 import AddressPicker from '@/maps/components/AddressPicker'
 import MarkdownInput from '@/utils/components/MarkdownInput'
@@ -193,7 +193,7 @@ export default {
     QField,
     QInput,
     QBtn,
-    QAutocomplete,
+    QSelect,
     AddressPicker,
     MarkdownInput,
     ChangePhoto,

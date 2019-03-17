@@ -1,5 +1,5 @@
 // Vue config (from main.js)
-import '../src/base/style/app.mat.styl'
+import '../src/base/style/app.styl'
 
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -16,10 +16,10 @@ Vue.config.errorHandler = (err, vm, info) => {
   console.log(err, vm, info)
 }
 
-import 'quasar-extras/roboto-font/roboto-font.css'
-import 'quasar-extras/material-icons/material-icons.css'
-import 'quasar-extras/fontawesome/fontawesome.css'
-import 'quasar-extras/animate'
+import '@quasar/extras/roboto-font/roboto-font.css'
+import '@quasar/extras/material-icons/material-icons.css'
+import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
+import '@quasar/extras/animate'
 
 // Storybook config
 import { addDecorator, configure } from '@storybook/vue'

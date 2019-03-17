@@ -7,7 +7,7 @@
     <QList
       item-separator
       link
-      v-close-overlay
+      v-close-menu
     >
       <QItem
         v-if="isEditor"

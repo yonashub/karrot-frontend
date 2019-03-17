@@ -61,14 +61,14 @@
             :label="$t('GROUP.JOIN_PLAYGROUND')"
             class="playground-checkbox"
           />
-          <QAlert
+          <QBanner
             v-if="joinPlayground"
             color="info"
             icon="info"
             class="q-my-md"
           >
             {{ $t('JOINGROUP.PROFILE_NOTE' ) }}
-          </QAlert>
+          </QBanner>
         </div>
 
         <div
@@ -105,7 +105,7 @@
 import {
   QField,
   QInput,
-  QAlert,
+  QBanner,
   QBtn,
   QCheckbox,
 } from 'quasar'
@@ -117,7 +117,7 @@ export default {
   components: {
     QField,
     QInput,
-    QAlert,
+    QBanner,
     QBtn,
     QCheckbox,
   },

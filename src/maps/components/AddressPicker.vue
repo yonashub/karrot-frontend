@@ -4,7 +4,7 @@
       v-model="value.address"
       :placeholder="$t('BUTTON.SEARCH')"
     >
-      <QAutocomplete
+      <QSelect
         @search="autocompleteSearch"
         @selected="autocompleteSelected"
       />
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { QSearch, QAutocomplete } from 'quasar'
+import { QSearch, QSelect } from 'quasar'
 import StandardMap from '@/maps/components/StandardMap'
 import L from 'leaflet'
 
@@ -46,7 +46,7 @@ export default {
       preventZoom: false,
     }
   },
-  components: { QSearch, QAutocomplete, StandardMap },
+  components: { QSearch, QSelect, StandardMap },
   watch: {
     'value.address' (val) {
       if (val === '') {

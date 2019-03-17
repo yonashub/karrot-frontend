@@ -1,7 +1,7 @@
 <template>
   <div>
     <QCard class="no-shadow grey-border">
-      <QCardTitle>
+      <QCardSection>
         <h5>
           <i
             class="icon fas fa-redo on-left"
@@ -24,7 +24,7 @@
             <QTooltip v-t="'BUTTON.CREATE'" />
           </QBtn>
         </div>
-      </QCardTitle>
+      </QCardSection>
       <QItem v-if="newSeries" >
         <PickupSeriesEdit
           :value="newSeries"
@@ -41,7 +41,7 @@
         highlight
         sparse
       >
-        <QCollapsible
+        <QExpansionItem
           v-for="series in pickupSeries"
           @show="makeVisible('series', series.id)"
           :key="series.id"
@@ -64,7 +64,7 @@
             seperator
           >
             <QListHeader v-t="'PICKUPMANAGE.UPCOMING_PICKUPS_IN_SERIES'" />
-            <QCollapsible
+            <QExpansionItem
               v-for="pickup in series.pickups"
               @show="makeVisible('pickup', pickup.id)"
               :key="pickup.id"
@@ -124,9 +124,9 @@
                 @save="savePickup"
                 @reset="resetPickup"
               />
-            </QCollapsible>
+            </QExpansionItem>
           </QList>
-        </QCollapsible>
+        </QExpansionItem>
       </QList>
     </QCard>
 
@@ -136,7 +136,7 @@
         :seed="placeId"
         type="banner"
       />
-      <QCardTitle>
+      <QCardSection>
         <h5>
           <i
             class="icon fas fa-shopping-basket on-left"
@@ -160,7 +160,7 @@
             <QTooltip v-t="'BUTTON.CREATE'" />
           </QBtn>
         </div>
-      </QCardTitle>
+      </QCardSection>
       <QItem v-if="newPickup" >
         <PickupEdit
           :value="newPickup"
@@ -175,7 +175,7 @@
         separator
         no-border
       >
-        <QCollapsible
+        <QExpansionItem
           v-for="pickup in oneTimePickups"
           @show="makeVisible('pickup', pickup.id)"
           :key="pickup.id"
@@ -207,7 +207,7 @@
             @reset="resetPickup"
             :status="pickup.saveStatus"
           />
-        </QCollapsible>
+        </QExpansionItem>
       </QList>
     </QCard>
   </div>
@@ -217,14 +217,14 @@
 import { mapGetters, mapActions } from 'vuex'
 import {
   QCard,
-  QCardTitle,
+  QCardSection,
   QList,
   QListHeader,
   QItem,
   QItemSide,
   QItemMain,
   QItemTile,
-  QCollapsible,
+  QExpansionItem,
   QBtn,
   QTooltip,
   QIcon,
@@ -246,14 +246,14 @@ export default {
     PickupEdit,
     RandomArt,
     QCard,
-    QCardTitle,
+    QCardSection,
     QList,
     QListHeader,
     QItem,
     QItemSide,
     QItemMain,
     QItemTile,
-    QCollapsible,
+    QExpansionItem,
     QBtn,
     QTooltip,
     QIcon,

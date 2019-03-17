@@ -13,7 +13,7 @@
     <QPopover>
       <QList
         link
-        v-close-overlay
+        v-close-menu
       >
         <template v-if="user && !user.mailVerified">
           <QItem

@@ -43,9 +43,12 @@
   </div>
 </template>
 <script>
-import { QOptionGroup, QIcon } from 'quasar-framework'
+import {
+  QOptionGroup,
+  QIcon,
+  QBtn,
+} from 'quasar'
 import api from '@/unsubscribe/api/unsubscribe'
-import QBtn from 'quasar-framework/src/components/btn/QBtn'
 import { parseToken } from '@/unsubscribe/utils'
 
 export default {

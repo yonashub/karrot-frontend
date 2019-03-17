@@ -1,5 +1,5 @@
 <template>
-  <QCollapsible>
+  <QExpansionItem>
     <template slot="header">
       <QItemMain>
         <QItemTile>
@@ -18,14 +18,14 @@
       :affected-user="affectedUser"
       :group-name="groupName"
     />
-  </QCollapsible>
+  </QExpansionItem>
 </template>
 
 <script>
 import {
   QItemMain,
   QItemTile,
-  QCollapsible,
+  QExpansionItem,
 } from 'quasar'
 
 import DateAsWords from '@/utils/components/DateAsWords'
@@ -35,7 +35,7 @@ export default {
   components: {
     QItemMain,
     QItemTile,
-    QCollapsible,
+    QExpansionItem,
     DateAsWords,
     VotingResults,
   },

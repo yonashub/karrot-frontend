@@ -1,5 +1,5 @@
 <template>
-  <QAlert
+  <QBanner
     v-if="user && !hasEmailVerified"
     icon="fas fa-exclamation-triangle"
     color="warning"
@@ -29,8 +29,8 @@
       <i class="fas fa-exclamation-triangle"/>
       {{ anyFirstError }}
     </p>
-  </QAlert>
-  <QCollapsible
+  </QBanner>
+  <QExpansionItem
     v-else-if="hasFailedEmailDeliveries"
     header-class="bg-warning text-white"
   >
@@ -60,17 +60,17 @@
         />
       </QItem>
     </QList>
-  </QCollapsible>
+  </QExpansionItem>
 </template>
 
 <script>
-import { QAlert, QList, QItem, QItemMain, QItemSide, QCollapsible } from 'quasar'
+import { QBanner, QList, QItem, QItemMain, QItemSide, QExpansionItem } from 'quasar'
 import { mapActions, mapGetters } from 'vuex'
 import statusMixin from '@/utils/mixins/statusMixin'
 
 export default {
   components: {
-    QAlert, QList, QItem, QItemMain, QItemSide, QCollapsible,
+    QBanner, QList, QItem, QItemMain, QItemSide, QExpansionItem,
   },
   computed: {
     ...mapGetters({

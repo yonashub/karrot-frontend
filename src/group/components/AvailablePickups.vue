@@ -18,9 +18,9 @@
         </div>
       </div>
       <template v-if="showPickups">
-        <QCardSeparator />
+        <QSeparator />
         <div
-          class="q-px-md q-py-sm bg-grey-2 q-caption"
+          class="q-px-md q-py-sm bg-grey-2 text-caption"
         >
           <i class="fas fa-info-circle on-left"/>
           {{ $t('PICKUPLIST.AVAILABLE_FROM_STORES') }}
@@ -43,14 +43,14 @@
 import PickupList from '@/pickups/components/PickupList'
 import {
   QCard,
-  QCardSeparator,
+  QSeparator,
 } from 'quasar'
 
 export default {
   components: {
     PickupList,
     QCard,
-    QCardSeparator,
+    QSeparator,
   },
   props: {
     pickups: { required: true, type: Array },

@@ -1,12 +1,12 @@
 <template>
   <div v-if="user && user.id">
     <div class="k-profile">
-      <QAlert
+      <QBanner
         v-if="!currentGroupMembership && currentGroup"
         type="warning"
       >
         {{ $t('SWITCHGROUP.NOT_MEMBER', { userName: user.displayName, groupName: currentGroup.name }) }}
-      </QAlert>
+      </QBanner>
       <div
         class="row justify-end"
         style="margin-bottom: -32px"
@@ -109,18 +109,18 @@
             </QItemMain>
           </QItem>
         </QList>
-        <QCardMedia v-if="$q.platform.is.mobile && user.latitude && user.longitude">
+        <QCardSection v-if="$q.platform.is.mobile && user.latitude && user.longitude">
           <UserMapPreview
             :user="user"
             style="height: 100px"
           />
-        </QCardMedia>
-        <QCardMain>
+        </QCardSection>
+        <QCardSection>
           <Markdown
             v-if="user.description"
             :source="user.description"
           />
-        </QCardMain>
+        </QCardSection>
       </QCard>
 
       <QModal
@@ -153,12 +153,12 @@
     </div>
     <KSpinner v-show="historyStatus.pending" />
     <QCard v-if="history.length > 0">
-      <QCardTitle>
+      <QCardSection>
         {{ $t('GROUP.HISTORY') }}
-      </QCardTitle>
-      <QCardMain>
+      </QCardSection>
+      <QCardSection>
         <HistoryContainer :history="history" />
-      </QCardMain>
+      </QCardSection>
     </QCard>
   </div>
 </template>
@@ -178,10 +178,10 @@ const ConflictSetup = () => import('@/issues/components/ConflictSetup')
 
 import {
   QCard,
-  QCardTitle,
-  QCardMain,
-  QAlert,
-  QCardMedia,
+  QCardSection,
+  QCardSection,
+  QBanner,
+  QCardSection,
   QBtn,
   QList,
   QItem,
@@ -201,10 +201,10 @@ export default {
     SwitchGroupButton,
     ConflictSetup,
     QCard,
-    QCardTitle,
-    QCardMain,
-    QAlert,
-    QCardMedia,
+    QCardSection,
+    QCardSection,
+    QBanner,
+    QCardSection,
     QBtn,
     QList,
     QItem,

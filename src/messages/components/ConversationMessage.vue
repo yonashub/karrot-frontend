@@ -43,7 +43,7 @@
         class="no-wrap k-message-meta"
       >
         <RouterLink :to="{ name: 'user', params: { userId: message.author.id } }">
-          <span class="k-message-author text-bold text-secondary uppercase">{{ message.author.displayName }}</span>
+          <span class="k-message-author text-bold text-secondary text-uppercase">{{ message.author.displayName }}</span>
         </RouterLink>
         <span class="message-date">
           <small class="text-weight-light">
