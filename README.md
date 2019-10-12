@@ -25,7 +25,7 @@
 <br>
 <br>
 
-This is the frontend repository, i.e. the browser-side software that powers [karrot.world](https://karrot.world). Have a look at our server-side code at [karrot-backend](https://github.com/yunity/karrot-backend), too!
+This is the frontend repository of karrot.world, i.e. the browser-side software that powers [karrot.world](https://karrot.world). Have a look at our server-side code at [karrot-backend](https://github.com/yunity/karrot-backend), too!
 
 ## Features
 
